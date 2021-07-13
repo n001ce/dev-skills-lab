@@ -5,11 +5,22 @@ export {
     findByIdAndDelete
 }
 
+
+
 const devskills = [
-  {text: 'JavaScript', done: true, _id: 125223},
-  {text: 'NodeJS', done: false, _id: 127904},
-  {text: 'HTML5', done: false, _id: 139608},
-  {text: 'MongoDB', done: false, _id: 139608}
+  {text: 'JavaScript', done: true, _id: 125223, image: "images/javascript.png"},
+  {text: 'NodeJS', done: false, _id: 127904, image: "images/nodejs.jpg"},
+  {text: 'HTML5', done: false, _id: 139608, image: "images/html.png"},
+  {text: 'MongoDB', done: false, _id: 139608, image:"images/mongodb_thumbnail.png"},
+  {text: 'Python', done: false, _id: 139608, image:"images/python.png"},
+  {text: 'Java', done: false, _id: 139608, image:"images/java.png"},
+  {text: 'CSS', done: false, _id: 139608, image:"images/css.png"},
+  {text: 'PHP', done: false, _id: 139608, image:"images/php.png"},
+  {text: 'PostgreSql', done: false, _id: 139608, image:"images/postgresql.png"},
+  {text: 'SQL', done: false, _id: 139608, image:"images/sql.png"},
+  {text: 'Typescript', done: false, _id: 139608, image:"images/typscript.png"},
+  {text: 'C++', done: false, _id: 139608, image:"images/c++.png"},
+  {text: 'C#', done: false, _id: 139608, image:"images/c-sharp-c-logo.png"}
 ]
 
 const find = (conditions, callback) => {

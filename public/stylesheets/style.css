@@ -1,6 +1,21 @@
 body {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+ul{
+  border: 10px solid rgba(185, 241, 255, 0.705);
+  margin-top: 40px;
+  border-radius: 30px;
+  background-color: rgba(185, 241, 255, 0.568);
+  height: 600px;
+  width: 800px;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 a {
@@ -17,4 +32,9 @@ a {
 	
 li {
   list-style: none;
+}
+
+img{
+  border-radius: 30px;
+  height: 100px;
 }

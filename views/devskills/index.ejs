@@ -24,7 +24,7 @@
           </form>
             <a href="/devskills/<%= devskill._id %>"><%= devskill.text %></a>
               - 
-            <%= devskill.done ? 'done' : 'not done' %>
+            <img src=<%= devskill.image %> />
           </li>
         <% }) %>
       </ul>
