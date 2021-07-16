@@ -15,6 +15,9 @@
     <h3><%= devskill.text %></h3>
     <p>Complete: <%= devskill.done ? 'Yes' : 'No' %></p>
   <% } %>
+  <form action="/devskills/<%= devskill._id %>?_method=DELETE" class='delete-form' method="POST">
+    <button type="submit" class="delete-form">DELETE</button>
+  </form>
 	<a href="/devskills">Go back</a>
 </body>
 </html>
