@@ -8,20 +8,21 @@ export {
 
 
 const devskills = [
-  {text: 'JavaScript', done: true, _id: 125223, image: "images/javascript.png"},
-  {text: 'NodeJS', done: false, _id: 127904, image: "images/nodejs.jpg"},
-  {text: 'HTML5', done: false, _id: 139608, image: "images/html.png"},
-  {text: 'MongoDB', done: false, _id: 139608, image:"images/mongodb_thumbnail.png"},
-  {text: 'Python', done: false, _id: 139608, image:"images/python.png"},
-  {text: 'Java', done: false, _id: 139608, image:"images/java.png"},
-  {text: 'CSS', done: false, _id: 139608, image:"images/css.png"},
-  {text: 'PHP', done: false, _id: 139608, image:"images/php.png"},
-  {text: 'PostgreSql', done: false, _id: 139608, image:"images/postgresql.png"},
-  {text: 'SQL', done: false, _id: 139608, image:"images/sql.png"},
-  {text: 'Typescript', done: false, _id: 139608, image:"images/typscript.png"},
-  {text: 'C++', done: false, _id: 139608, image:"images/c++.png"},
-  {text: 'C#', done: false, _id: 139608, image:"images/c-sharp-c-logo.png"}
+  {text: 'JavaScript', done: true, _id: 125223},
+  {text: 'NodeJS', done: true, _id: 127904},
+  {text: 'HTML5', done: true, _id: 139608},
+  {text: 'MongoDB', done: true, _id: 139665},
+  {text: 'Python', done: true, _id: 139456},
+  {text: 'Java', done: true, _id: 139345},
+  {text: 'CSS', done: true, _id: 139234},
+  {text: 'PHP', done: true, _id: 139123},
+  {text: 'PostgreSql', done: true, _id: 139543},
+  {text: 'SQL', done: true, _id: 139767},
+  {text: 'Typescript', done: true, _id: 139789},
+  {text: 'C++', done: true, _id: 139097},
+  {text: 'C#', done: true, _id: 139789}
 ]
+
 
 const find = (conditions, callback) => {
   // see if this works, if not, execute the code in the catch block
@@ -51,10 +52,8 @@ const findById = (id, callback) =>{
   }
 
 function create(devskill, callback) {
-  // Add the id
   devskill._id = Date.now() % 1000000
-  // New devskills wouldn't be done
-  devskill.done = false
+  devskill.done = true
   devskills.push(devskill)
   return callback(null, devskill)
 }

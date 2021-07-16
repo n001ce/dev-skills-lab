@@ -8,6 +8,9 @@ export {
     deleteDevskill as delete
 }
 
+
+
+
 function index(req, res){
   devskillsDb.find({}, function(error, devskills) {
     res.render('devskills/index', {
@@ -32,15 +35,14 @@ function newDevskill(req, res) {
 }
 
 function create(req, res) {
-  console.log(req.body)
   devskillsDb.create(req.body, function(error, devskill) {
-		// Notice we are doing a redirect here!
     res.redirect('/devskills')
   })
 }
 
 function deleteDevskill(req, res) {
   devskillsDb.findByIdAndDelete(req.params.id, function(error, devskill) {
+    devskill.text = req.body.value
     res.redirect('/devskills')
   })
 }
