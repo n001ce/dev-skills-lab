@@ -1,36 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="stylesheets/style.css">
-    <title>Developer Skills</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+    <title>Dev Skills</title>
   </head>
-  <body>
+<body>
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <a class="navbar-brand" href="">Dev Skills</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-targert="#navmenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/devskills/new">New Skill</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../">Home</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- showcase -->
+
+  <section class="bg-dark text-light p-5 text-center text-sm-start">
+    <div class="container">
+      <div class="d-sm-flex align-items-center justify-content-between">
+        <div>
+          <h1>Dev <span class="text-warning">Skills</span></h1>
+          <p class="lead my-4">Unit 2 Lab <span class="text-warning">||</span> Dev-Skills <span class="text-warning">||</span>  Alex Cormier</p>
+          <p class="lead my-4"><span class="text-warning">Use NavBar above</span></p>
+        </div>
+      </div>
+    </div>
+    </section>
     <h1>Skills as of <%= time %> </h1>
     <% if(error) { %>
     <h2><%= error %></h2>
     <% } %>
     <ul>
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr class="table-primary">
+            <th>Skill</th>
+            <th>ID</th>
+            <th>Done</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody>
       <% devskills.forEach(function(skill) { %>
-        
-        <li> 
-          <form 
-          action="/devskills/<%= skill._id %>?_method=DELETE"
-          class='delete-form'
-          method="POST"
-        >
-          <button type="submit">DELETE</button>
-        </form>
-          <a href="/devskills/<%= skill._id %>"><%= skill.text%></a>
-          - <%= skill.done ? 'Yes' : 'No' %>
-          </li> 
+        <tr>
+        <td class="table-secondary"><a href="/devskills/<%= skill._id %>"><%= skill.text%></a></td>
+        <td class = "table-secondary"><%=skill._id%></td>
+        <td class = "table-secondary"><%=skill.done%></td>
+        <td class = "table-secondary"><form action="/devskills/<%= skill._id %>?_method=DELETE" class='delete-form' method="POST">
+          <button type="submit" class="delete-form">DELETE</button>
+        </form></td>
+
+      </tr>
           
       <% }) %>
     </ul>
-  </ul>
-  <a href="/devskills/new" class="btn">ADD NEW SKILL</a>
 
+<a href="/devskills/new" class="btn">ADD NEW SKILL</a>
   </body>
 </html>
